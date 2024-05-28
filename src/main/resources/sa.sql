@@ -1,0 +1,14 @@
+CREATE TABLE client(
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(60)
+);
+
+CREATE TABLE sentiment (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    texte VARCHAR(50),
+    type VARCHAR(10),
+    client_id INTEGER,
+    FOREIGN KEY (client_id)
+            REFERENCES CLIENT(id)
+            ON DELETE CASCADE
+);
